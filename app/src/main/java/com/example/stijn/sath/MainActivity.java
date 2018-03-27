@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -28,23 +30,22 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private ArrayList<Film> films = new ArrayList<>();
     private final static String TAG = MainActivity.class.getSimpleName();
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Cinema c = new Cinema("Sathé", "lovensdijkstraatjtfytcgc 112", "breda", "idk");
+        //final Cinema c = new Cinema("Sathé", "Lovensdijkstraat 61", "Breda", "4818AJ");
         Hall h = new Hall(1);
-        Seat s1 = new Seat(1, h.getHallNumber());
-        h.addSeat(s1);
-        Seat s2 = new Seat(2, h.getHallNumber());
-        h.addSeat(s2);
-        Seat s3 = new Seat(3, h.getHallNumber());
-        h.addSeat(s3);
-        Seat s4 = new Seat(4, h.getHallNumber());
-        h.addSeat(s4);
-        c.addHall(h);
+        //Seat s1 = new Seat(1, h.getHallNumber());
+        //h.addSeat(s1);
+        //Seat s2 = new Seat(2, h.getHallNumber());
+        //h.addSeat(s2);
+        //Seat s3 = new Seat(3, h.getHallNumber());
+        //h.addSeat(s3);
+        //Seat s4 = new Seat(4, h.getHallNumber());
+        //h.addSeat(s4);
+        //c.addHall(h);
 
 
         Film f = new Film(1, "the hangover", "comedy", "3:00", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", 12, h, null, "https://ia.media-imdb.com/images/M/MV5BNDAxMTZmZGItZmM2NC00M2E1LWI1NmEtZjhhODM2MGU0ZmJlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX675_CR0,0,675,999_AL_.jpg");

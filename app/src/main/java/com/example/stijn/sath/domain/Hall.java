@@ -1,14 +1,15 @@
 package com.example.stijn.sath.domain;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Created by stijn on 27-3-2018.
  */
 
-public class Hall {
+public class Hall implements Serializable {
     private int hallNumber;
-    private ArrayList<Seat> seats = new ArrayList<Seat>();
+    private ArrayList<Seat> seats;
 
     public Hall(int hallNumber, ArrayList seats) {
         this.hallNumber = hallNumber;

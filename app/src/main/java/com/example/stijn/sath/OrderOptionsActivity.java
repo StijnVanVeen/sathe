@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 public class OrderOptionsActivity extends AppCompatActivity {
 
@@ -12,6 +14,14 @@ public class OrderOptionsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_options);
+        Button gotoChairSelection = (Button) findViewById(R.id.btnProceed);
+        gotoChairSelection.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), ChairActivity.class);
+                getApplicationContext().startActivity(intent);
+            }
+        });
     }
 
     @Override

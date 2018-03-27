@@ -1,12 +1,13 @@
 package com.example.stijn.sath.domain;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Created by stijn on 27-3-2018.
  */
 
-public class Cinema {
+public class Cinema implements Serializable {
     private String name;
     private String adress;
     private String city;
@@ -50,6 +51,13 @@ public class Cinema {
 
     public ArrayList getCinemaReviews() {
         return cinemaReviews;
+    }
+
+    public Hall getMainHall() {
+        if (halls != null) {
+            return halls.get(0);
+        }
+        return null;
     }
 
     public ArrayList getHalls() {
