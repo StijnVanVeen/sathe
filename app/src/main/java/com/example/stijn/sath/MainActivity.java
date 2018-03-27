@@ -1,8 +1,15 @@
 package com.example.stijn.sath;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.GridLayout;
+import android.widget.GridView;
+import android.widget.Spinner;
 
 import com.example.stijn.sath.domain.Cinema;
 import com.example.stijn.sath.domain.Film;
@@ -35,9 +42,50 @@ public class MainActivity extends AppCompatActivity {
         c.addHall(h);
 
 
-        Film f = new Film(1, "the hangover", "comedy", "3:00", "doet aan kim denken", 12, h, null);
+        Film f = new Film(1, "the hangover", "comedy", "3:00", "doet aan kim denken", 12, h, null, "https://ia.media-imdb.com/images/M/MV5BNDAxMTZmZGItZmM2NC00M2E1LWI1NmEtZjhhODM2MGU0ZmJlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX675_CR0,0,675,999_AL_.jpg");
+        films.add(f);
 
         Log.i("fuck you", f.toString());
 
+        //find Gridview and add adapter
+        GridView gridView = findViewById(R.id.grdFilms);
+        FilmAdapter adapter = new FilmAdapter(this, getLayoutInflater(), films);
+        gridView.setAdapter(adapter);
+
+        adapter.notifyDataSetChanged();
+
+        //find spinner
+        Spinner spinner = findViewById(R.id.spnrGenre);
+        ArrayAdapter<CharSequence> spnrAdapter = ArrayAdapter.createFromResource(this, R.array.genres, android.R.layout.simple_spinner_dropdown_item);
+        spnrAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(spnrAdapter);
+    }
+
+    //adds custom menu
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.available_activities, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        Intent i;
+        switch(id){
+            case R.id.mnuFilms:
+//                i = new Intent(getApplicationContext(), .class);
+//                startActivity(i);
+                break;
+            case R.id.mnuContact:
+//                i = new Intent(getApplicationContext(), .class);
+//                startActivity(i);
+                break;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+        return true;
     }
 }
