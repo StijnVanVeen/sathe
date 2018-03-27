@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     public final static String IMAGEURL = "filmposter";
     public final static String FILMNAME = "filmname";
+    public final static String FILMDESCRIPTION = "filmdescription";
 
     private ArrayList<Film> films = new ArrayList<>();
     private final static String TAG = MainActivity.class.getSimpleName();
@@ -46,7 +47,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         c.addHall(h);
 
 
-        Film f = new Film(1, "the hangover", "comedy", "3:00", "doet aan kim denken", 12, h, null, "https://ia.media-imdb.com/images/M/MV5BNDAxMTZmZGItZmM2NC00M2E1LWI1NmEtZjhhODM2MGU0ZmJlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX675_CR0,0,675,999_AL_.jpg");
+        Film f = new Film(1, "the hangover", "comedy", "3:00", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", 12, h, null, "https://ia.media-imdb.com/images/M/MV5BNDAxMTZmZGItZmM2NC00M2E1LWI1NmEtZjhhODM2MGU0ZmJlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX675_CR0,0,675,999_AL_.jpg");
         films.add(f);
 
         Log.i("fuck you", f.toString());
@@ -73,6 +74,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         Intent i = new Intent(getApplicationContext(), FilmDetailActivity.class);
         i.putExtra(IMAGEURL, film.getImageURL());
         i.putExtra(FILMNAME, film.getName());
+        i.putExtra(FILMDESCRIPTION, film.getDesription());
 
         startActivity(i);
     }

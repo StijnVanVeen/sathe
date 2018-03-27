@@ -22,12 +22,14 @@ public class FilmDetailActivity extends AppCompatActivity {
 
         ImageView filmPoster = findViewById(R.id.filmPoster);
         TextView filmTitle = findViewById(R.id.filmTitle);
-        Log.i("Test: ","2");
+        TextView description = findViewById(R.id.filmDescription);
 
         String imageURL = extras.getString(MainActivity.IMAGEURL);
         String filmName = extras.getString(MainActivity.FILMNAME);
-        filmTitle.setText(filmName);
+        String filmDescription = extras.getString(MainActivity.FILMDESCRIPTION);
 
+        description.setText(filmDescription);
+        filmTitle.setText(filmName);
         Picasso.with(getApplicationContext()).load(imageURL).into(filmPoster);
     }
 

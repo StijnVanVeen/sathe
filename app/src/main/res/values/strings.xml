@@ -24,4 +24,5 @@
     <string name="cinemaZipcode">3077 MK</string>
 
     <string name="filmTitle">Film title</string>
+    <string name="order">Order tickets</string>
 </resources>
