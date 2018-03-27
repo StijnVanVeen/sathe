@@ -22,4 +22,6 @@
     <string name="cinemaCity">Rotterdam</string>
     <string name="cinemaAdress">Cor Kieboomplein 501</string>
     <string name="cinemaZipcode">3077 MK</string>
+
+    <string name="filmTitle">Film title</string>
 </resources>

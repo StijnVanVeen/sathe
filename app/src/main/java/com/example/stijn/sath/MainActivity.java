@@ -6,8 +6,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.GridLayout;
 import android.widget.GridView;
 import android.widget.Spinner;
 
@@ -18,7 +19,10 @@ import com.example.stijn.sath.domain.Seat;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener{
+
+    public final static String IMAGEURL = "filmposter";
+    public final static String FILMNAME = "filmname";
 
     private ArrayList<Film> films = new ArrayList<>();
     private final static String TAG = MainActivity.class.getSimpleName();
@@ -51,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         GridView gridView = findViewById(R.id.grdFilms);
         FilmAdapter adapter = new FilmAdapter(this, getLayoutInflater(), films);
         gridView.setAdapter(adapter);
+        gridView.setOnItemClickListener(this);
 
         adapter.notifyDataSetChanged();
 
@@ -59,6 +64,17 @@ public class MainActivity extends AppCompatActivity {
         ArrayAdapter<CharSequence> spnrAdapter = ArrayAdapter.createFromResource(this, R.array.genres, android.R.layout.simple_spinner_dropdown_item);
         spnrAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(spnrAdapter);
+    }
+
+    //listener for gridview
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+        Film film = films.get(position);
+        Intent i = new Intent(getApplicationContext(), FilmDetailActivity.class);
+        i.putExtra(IMAGEURL, film.getImageURL());
+        i.putExtra(FILMNAME, film.getName());
+
+        startActivity(i);
     }
 
     //adds custom menu

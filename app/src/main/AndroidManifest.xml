@@ -40,7 +40,9 @@
 
         <activity
             android:name=".CinemaAbout"
-            android:label="@string/title_activity_cinema_about"></activity>
+            android:label="@string/title_activity_cinema_about" />
+        <activity android:name=".ETicketActivity" />
+        <activity android:name=".FilmDetailActivity"></activity>
     </application>
 
 </manifest>
