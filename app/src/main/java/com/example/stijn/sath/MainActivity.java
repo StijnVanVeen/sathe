@@ -75,6 +75,8 @@ public class MainActivity extends AppCompatActivity {
 
         Intent i;
         switch(id){
+            case R.id.mnuMyTickets:
+                break;
             case R.id.mnuFilms:
                 break;
             case R.id.mnuContact:

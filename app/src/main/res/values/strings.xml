@@ -12,4 +12,5 @@
     <string name="films">Movies</string>
     <string name="contact">Contact</string>
     <string name="title_activity_cinema_about">map</string>
+    <string name="myTickets">My tickets</string>
 </resources>

@@ -3,6 +3,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/mnuMyTickets"
+        android:title="@string/myTickets" />
+    <item
         android:id="@+id/mnuFilms"
         android:title="@string/films" />
     <item android:id="@+id/mnuContact"
