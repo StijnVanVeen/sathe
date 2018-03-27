@@ -14,6 +14,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private ArrayList<Film> films = new ArrayList<>();
+    private final static String TAG = MainActivity.class.getSimpleName();
 
 
     @Override
