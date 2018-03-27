@@ -7,6 +7,7 @@ import java.util.ArrayList;
  */
 
 public class Film {
+    private String imageURL;
     private int id;
     private String name;
     private String genre;
@@ -16,7 +17,7 @@ public class Film {
     private Hall hall;
     private ArrayList<FilmReview> filmreviews = new ArrayList<>();
 
-    public Film(int id, String name, String genre, String duration, String desription, int pegi, Hall hall, ArrayList<FilmReview> filmreviews) {
+    public Film(int id, String name, String genre, String duration, String desription, int pegi, Hall hall, ArrayList<FilmReview> filmreviews, String imageURL) {
         this.id = id;
         this.name = name;
         this.genre = genre;
@@ -25,6 +26,7 @@ public class Film {
         this.pegi = pegi;
         this.hall = hall;
         this.filmreviews = filmreviews;
+        this.imageURL = imageURL;
     }
 
     public int getId() {
@@ -61,6 +63,10 @@ public class Film {
 
     public void addFilmReview(FilmReview filmReview){
         filmreviews.add(filmReview);
+    }
+
+    public String getImageURL() {
+        return imageURL;
     }
 
     @Override
