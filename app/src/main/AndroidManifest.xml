@@ -42,7 +42,8 @@
             android:name=".CinemaAbout"
             android:label="@string/title_activity_cinema_about" />
         <activity android:name=".ETicketActivity" />
-        <activity android:name=".FilmDetailActivity"></activity>
+        <activity android:name=".FilmDetailActivity" />
+        <activity android:name=".OrderOptionsActivity"></activity>
     </application>
 
 </manifest>
