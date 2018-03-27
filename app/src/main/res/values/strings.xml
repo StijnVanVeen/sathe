@@ -28,4 +28,5 @@
     <string name="chooseTickets">Choose Tickets</string>
     <string name="time">Time: </string>
     <string name="chairAmount">Amount of chairs: </string>
+    <string name="proceed">Proceed</string>
 </resources>
