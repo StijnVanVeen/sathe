@@ -76,12 +76,10 @@ public class MainActivity extends AppCompatActivity {
         Intent i;
         switch(id){
             case R.id.mnuFilms:
-//                i = new Intent(getApplicationContext(), .class);
-//                startActivity(i);
                 break;
             case R.id.mnuContact:
-//                i = new Intent(getApplicationContext(), .class);
-//                startActivity(i);
+                i = new Intent(getApplicationContext(), CinemaAbout.class);
+                startActivity(i);
                 break;
             default:
                 return super.onOptionsItemSelected(item);
