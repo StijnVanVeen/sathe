@@ -76,6 +76,8 @@ public class MainActivity extends AppCompatActivity {
         Intent i;
         switch(id){
             case R.id.mnuMyTickets:
+                i = new Intent(getApplicationContext(), ETicketActivity.class);
+                startActivity(i);
                 break;
             case R.id.mnuFilms:
                 break;

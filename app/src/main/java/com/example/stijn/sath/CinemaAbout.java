@@ -65,6 +65,8 @@ public class CinemaAbout extends AppCompatActivity implements OnMapReadyCallback
         Intent i;
         switch (id) {
             case R.id.mnuMyTickets:
+                i = new Intent(getApplicationContext(), ETicketActivity.class);
+                startActivity(i);
                 break;
             case R.id.mnuFilms:
                 i = new Intent(getApplicationContext(), MainActivity.class);
