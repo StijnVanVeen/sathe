@@ -11,6 +11,15 @@
     </string-array>
     <string name="films">Movies</string>
     <string name="contact">Contact</string>
-    <string name="title_activity_cinema_about">map</string>
+    <string name="title_activity_cinema_about">Sathé</string>
     <string name="myTickets">My tickets</string>
+    <string name="name">Name</string>
+    <string name="city">City</string>
+    <string name="adress">Adress</string>
+    <string name="zipcode">Zipcode</string>
+    <string name="colon">: </string>
+    <string name="cinemaName">Sathé</string>
+    <string name="cinemaCity">Rotterdam</string>
+    <string name="cinemaAdress">Cor Kieboomplein 501</string>
+    <string name="cinemaZipcode">3077 MK</string>
 </resources>
