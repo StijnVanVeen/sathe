@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Sathë</string>
+    <string-array name="genres">
+        <item>All genres</item>
+        <item>Action</item>
+        <item>Thriller</item>
+        <item>Romance</item>
+        <item>Horror</item>
+        <item>Fantasy</item>
+        <item>Sci-fi</item>
+    </string-array>
 </resources>

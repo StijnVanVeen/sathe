@@ -3,8 +3,10 @@ package com.example.stijn.sath;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ArrayAdapter;
 import android.widget.GridLayout;
 import android.widget.GridView;
+import android.widget.Spinner;
 
 import com.example.stijn.sath.domain.Cinema;
 import com.example.stijn.sath.domain.Film;
@@ -42,11 +44,18 @@ public class MainActivity extends AppCompatActivity {
 
         Log.i("fuck you", f.toString());
 
+        //find Gridview and add adapter
         GridView gridView = findViewById(R.id.grdFilms);
         FilmAdapter adapter = new FilmAdapter(this, getLayoutInflater(), films);
         gridView.setAdapter(adapter);
 
         adapter.notifyDataSetChanged();
+
+        //find spinner
+        Spinner spinner = findViewById(R.id.spnrGenre);
+        ArrayAdapter<CharSequence> spnrAdapter = ArrayAdapter.createFromResource(this, R.array.genres, android.R.layout.simple_spinner_dropdown_item);
+        spnrAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(spnrAdapter);
 
     }
 }
