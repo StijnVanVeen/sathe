@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Sathë</string>
+    <string name="app_name">Sathé</string>
     <string-array name="genres">
         <item>All genres</item>
         <item>Action</item>
@@ -9,4 +9,6 @@
         <item>Fantasy</item>
         <item>Sci-fi</item>
     </string-array>
+    <string name="films">Movies</string>
+    <string name="contact">Contact</string>
 </resources>
