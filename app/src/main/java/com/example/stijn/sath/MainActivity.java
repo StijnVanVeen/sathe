@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Cinema c = new Cinema("Sathé", "lovensdijkstraat 1", "breda", "idk");
+        Cinema c = new Cinema("Sathé", "lovensdijkstraatjtfytcgc 112", "breda", "idk");
         Hall h = new Hall(1);
         Seat s1 = new Seat(1, h.getHallNumber());
         h.addSeat(s1);
