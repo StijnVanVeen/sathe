@@ -3,9 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://C:\dev\Programmeren_3\sathe\app\app.iml" filepath="C:\dev\Programmeren_3\sathe\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/sathe.iml" filepath="$PROJECT_DIR$/sathe.iml" />
-      <module fileurl="file://C:\dev\Programmeren_3\sathe\sathe.iml" filepath="C:\dev\Programmeren_3\sathe\sathe.iml" />
     </modules>
   </component>
 </project>
