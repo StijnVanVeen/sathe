@@ -20,8 +20,9 @@ import com.example.stijn.sath.domain.Hall;
 import com.example.stijn.sath.domain.Seat;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener, CinemaFilmAPI.OnFilmAvailable{
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener, CinemaFilmAPI.OnFilmAvailable, AdapterView.OnItemSelectedListener{
 
     public final static String IMAGEURL = "filmposter";
     public final static String FILMNAME = "filmname";
@@ -30,12 +31,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private ArrayList<Film> films = new ArrayList<>();
     private final static String TAG = MainActivity.class.getSimpleName();
     private FilmAdapter adapter;
+    private HashMap genreMap = new HashMap();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        LoadAllGenres();
         //final Cinema c = new Cinema("Sathé", "Lovensdijkstraat 61", "Breda", "4818AJ");
         Hall h = new Hall(1);
         //Seat s1 = new Seat(1, h.getHallNumber());
@@ -56,6 +58,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 //        Log.i("fuck you", f.toString());
 
+
         //find Gridview and add adapter
         GridView gridView = findViewById(R.id.grdFilms);
         adapter = new FilmAdapter(this, getLayoutInflater(), films);
@@ -69,11 +72,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         ArrayAdapter<CharSequence> spnrAdapter = ArrayAdapter.createFromResource(this, R.array.genres, android.R.layout.simple_spinner_dropdown_item);
         spnrAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(spnrAdapter);
+        spinner.setOnItemSelectedListener(this);
 
-        //API
-        String[] urls = new String[] {"https://api.themoviedb.org/3/movie/now_playing?api_key=7f3a94496635ed67f41c9f80625f3a39&language=en-US"};
-        CinemaFilmAPI getFilm = new CinemaFilmAPI(this);
-        getFilm.execute(urls);
     }
 
     //listener for gridview
@@ -90,6 +90,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public void onFilmAvailable(Film film) {
+        Log.i(TAG, "onFilmAvailable():" + film.toString());
         films.add(film);
         adapter.notifyDataSetChanged();
     }
@@ -122,5 +123,54 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 return super.onOptionsItemSelected(item);
         }
         return true;
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        Log.i(TAG, "onItemSelected(): selected item: " + i);
+        films.clear();
+        String[] stringArray = getApplicationContext().getResources().getStringArray(R.array.genres);
+        String selectedGenre = stringArray[i];
+        int genreId = (Integer) genreMap.get(selectedGenre);
+        String url = "https://api.themoviedb.org/3/genre/" + genreId + "/movies?api_key=6edfc04651891fd32f7c7b7a98565c08&language=en-US&include_adult=false&sort_by=created_at.asc";
+        fetchFilms(url);
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
+    }
+
+    private void fetchFilms(String url){
+        Log.i(TAG, "fetchFilms():");
+        CinemaFilmAPI getFilm = new CinemaFilmAPI(this);
+        getFilm.execute(url);
+    }
+
+    private void LoadAllGenres() {
+        Log.i(TAG, "LoadAllGenres():");
+        String[] stringArray = getApplicationContext().getResources().getStringArray(R.array.genres);
+        for(String s : stringArray){
+            switch (s){
+                case "Action":
+                    genreMap.put(s, 28);
+                    break;
+                case "Thriller":
+                    genreMap.put(s, 53);
+                    break;
+                case "Romance":
+                    genreMap.put(s, 10402);
+                    break;
+                case "Horror":
+                    genreMap.put(s, 27);
+                    break;
+                case "Fantasy":
+                    genreMap.put(s, 14);
+                    break;
+                case "Science Fiction":
+                    genreMap.put(s, 878);
+                    break;
+            }
+        }
     }
 }
