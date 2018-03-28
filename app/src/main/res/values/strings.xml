@@ -30,4 +30,5 @@
     <string name="chairAmount">Amount of chairs: </string>
     <string name="proceed">Proceed</string>
     <string name="a_chair_description">Kies een stoel.</string>
+    <string name="reviews">Reviews: </string>
 </resources>
