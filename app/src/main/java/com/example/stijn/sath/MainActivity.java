@@ -21,7 +21,7 @@ import com.example.stijn.sath.domain.Seat;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener{
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener, CinemaFilmAPI.OnFilmAvailable{
 
     public final static String IMAGEURL = "filmposter";
     public final static String FILMNAME = "filmname";
@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     private ArrayList<Film> films = new ArrayList<>();
     private final static String TAG = MainActivity.class.getSimpleName();
+    private FilmAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,14 +49,16 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         //c.addHall(h);
 
 
-        Film f = new Film(1, "the hangover", "comedy", "3:00", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", 12, h, null, "https://ia.media-imdb.com/images/M/MV5BNDAxMTZmZGItZmM2NC00M2E1LWI1NmEtZjhhODM2MGU0ZmJlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX675_CR0,0,675,999_AL_.jpg");
-        films.add(f);
+//        Film f = new Film(1, "the hangover", "comedy", "3:00", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", 12, h, null, "https://ia.media-imdb.com/images/M/MV5BNDAxMTZmZGItZmM2NC00M2E1LWI1NmEtZjhhODM2MGU0ZmJlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX675_CR0,0,675,999_AL_.jpg");
+//        films.add(f);
 
-        Log.i("fuck you", f.toString());
+
+
+//        Log.i("fuck you", f.toString());
 
         //find Gridview and add adapter
         GridView gridView = findViewById(R.id.grdFilms);
-        FilmAdapter adapter = new FilmAdapter(this, getLayoutInflater(), films);
+        adapter = new FilmAdapter(this, getLayoutInflater(), films);
         gridView.setAdapter(adapter);
         gridView.setOnItemClickListener(this);
 
@@ -66,6 +69,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         ArrayAdapter<CharSequence> spnrAdapter = ArrayAdapter.createFromResource(this, R.array.genres, android.R.layout.simple_spinner_dropdown_item);
         spnrAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(spnrAdapter);
+
+        //API
+        String[] urls = new String[] {"https://api.themoviedb.org/3/movie/now_playing?api_key=7f3a94496635ed67f41c9f80625f3a39&language=en-US"};
+        CinemaFilmAPI getFilm = new CinemaFilmAPI(this);
+        getFilm.execute(urls);
     }
 
     //listener for gridview
@@ -78,6 +86,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         i.putExtra(FILMDESCRIPTION, film.getDesription());
 
         startActivity(i);
+    }
+
+    @Override
+    public void onFilmAvailable(Film film) {
+        films.add(film);
+        adapter.notifyDataSetChanged();
     }
 
     //adds custom menu
