@@ -10,11 +10,18 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.stijn.sath.domain.FilmReview;
 import com.squareup.picasso.Picasso;
 
-public class FilmDetailActivity extends AppCompatActivity implements View.OnClickListener {
+import java.util.ArrayList;
+
+public class FilmDetailActivity extends AppCompatActivity implements View.OnClickListener, FilmReviewAPI.OnReviewAvailable {
+
+    private ArrayList<FilmReview> filmReviews = new ArrayList<>();
+    private FilmReviewAdapter filmReviewAdapter = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,12 +38,26 @@ public class FilmDetailActivity extends AppCompatActivity implements View.OnClic
         String imageURL = extras.getString(MainActivity.IMAGEURL);
         String filmName = extras.getString(MainActivity.FILMNAME);
         String filmDescription = extras.getString(MainActivity.FILMDESCRIPTION);
+        int filmID = extras.getInt("filmID");
+
+        fetchReviews(filmID);
+
+        ListView reviewListView = findViewById(R.id.reviewsList);
+        filmReviewAdapter = new FilmReviewAdapter(filmReviews, getLayoutInflater());
+        reviewListView.setAdapter(filmReviewAdapter);
+        filmReviewAdapter.notifyDataSetChanged();
 
         description.setText(filmDescription);
         description.setMovementMethod(new ScrollingMovementMethod());
         filmTitle.setText(filmName);
         Picasso.with(getApplicationContext()).load(imageURL).into(filmPoster);
         orderTickets.setOnClickListener(this);
+    }
+
+    private void fetchReviews(int filmID) {
+        FilmReviewAPI task = new FilmReviewAPI(this);
+        String url = "https://api.themoviedb.org/3/movie/" + filmID + "/reviews?api_key=6edfc04651891fd32f7c7b7a98565c08&language=en-US&page=1";
+        task.execute(url);
     }
 
     @Override
@@ -73,5 +94,11 @@ public class FilmDetailActivity extends AppCompatActivity implements View.OnClic
                 return super.onOptionsItemSelected(item);
         }
         return true;
+    }
+
+    @Override
+    public void onReviewAvailable(FilmReview filmReview) {
+        filmReviews.add(filmReview);
+        filmReviewAdapter.notifyDataSetChanged();
     }
 }

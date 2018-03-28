@@ -5,17 +5,17 @@ package com.example.stijn.sath.domain;
  */
 
 public class FilmReview {
-    private int id;
+    private String id;
     private String author;
     private String content;
 
-    public FilmReview(int id, String author, String content) {
+    public FilmReview(String id, String author, String content) {
         this.id = id;
         this.author = author;
         this.content = content;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 

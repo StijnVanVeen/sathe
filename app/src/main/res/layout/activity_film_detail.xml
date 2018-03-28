@@ -24,13 +24,13 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:background="@color/colorLightGrey"
         android:text="@string/filmTitle"
         android:textColor="@android:color/black"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/filmPoster"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@color/colorLightGrey"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnOrder"
@@ -38,14 +38,14 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:text="@string/order"
+        app:layout_constraintBottom_toBottomOf="@id/filmPoster"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="141dp"
-        app:layout_constraintBottom_toBottomOf="@id/filmPoster"/>
+        tools:layout_editor_absoluteY="141dp" />
 
     <TextView
         android:id="@+id/filmDescription"
         android:layout_width="0dp"
-        android:layout_height="100dp"
+        android:layout_height="113dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
@@ -70,6 +70,19 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/filmDescription"
-        app:layout_constraintVertical_bias="0.07999998" />
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ListView
+        android:id="@+id/reviewsList"
+        android:layout_width="368dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reviews" />
 
 </android.support.constraint.ConstraintLayout>

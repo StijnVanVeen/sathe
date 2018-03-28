@@ -1,11 +1,10 @@
 package com.example.stijn.sath;
 
-import android.content.Context;
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.util.Log;
 
 import com.example.stijn.sath.domain.Film;
+import com.example.stijn.sath.domain.FilmReview;
 import com.example.stijn.sath.domain.Hall;
 
 import org.json.JSONArray;
@@ -22,13 +21,13 @@ import java.net.URL;
 import java.net.URLConnection;
 
 /**
- * Created by kelly on 28-3-2018.
+ * Created by stijn on 28-3-2018.
  */
 
-public class CinemaFilmAPI extends AsyncTask<String, Void, String> {
-    private OnFilmAvailable listener = null;
+public class FilmReviewAPI extends AsyncTask<String, Void, String>{
+    private OnReviewAvailable listener = null;
 
-    public CinemaFilmAPI(OnFilmAvailable listener) {
+    public FilmReviewAPI(OnReviewAvailable listener) {
         this.listener = listener;
     }
 
@@ -55,8 +54,8 @@ public class CinemaFilmAPI extends AsyncTask<String, Void, String> {
 
             // Run the request via the HTTP connection on the URL
             httpConnection.connect();
-            responsCode = httpConnection.getResponseCode();
 
+            responsCode = httpConnection.getResponseCode();
             if (responsCode == HttpURLConnection.HTTP_OK) {
                 inputStream = httpConnection.getInputStream();
                 response = getStringFromInputStream(inputStream);
@@ -73,6 +72,7 @@ public class CinemaFilmAPI extends AsyncTask<String, Void, String> {
     private static String getStringFromInputStream(InputStream is) {
         BufferedReader br = null;
         StringBuilder sb = new StringBuilder();
+
         String line;
         try {
 
@@ -80,6 +80,7 @@ public class CinemaFilmAPI extends AsyncTask<String, Void, String> {
             while ((line = br.readLine()) != null) {
                 sb.append(line);
             }
+
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
@@ -91,6 +92,7 @@ public class CinemaFilmAPI extends AsyncTask<String, Void, String> {
                 }
             }
         }
+
         return sb.toString();
     }
 
@@ -112,29 +114,20 @@ public class CinemaFilmAPI extends AsyncTask<String, Void, String> {
                 //get individual photo
                 JSONObject result = results.getJSONObject(idx);
 
-                //Get the image url
-                String title = result.getString("original_title");
+                String id = result.getString("id");
+                String author = result.getString("author");
+                String content = result.getString("content");
 
-                //Get the imageID
-                int filmID = result.getInt("id");
-
-                String description = result.getString("overview");
-                String imageURL = "http://image.tmdb.org/t/p/w185";
-                imageURL += result.getString("poster_path");
-
-
-                // Create new MarsRoverImage object
-                Film film = new Film(filmID,title,"genre","--",description, 16, new Hall(2), null, imageURL);
-                Log.i("FILM", imageURL);
+                FilmReview filmReview = new FilmReview(id, author, content);
 
                 // call back with new MarsRoverImage data
-                listener.onFilmAvailable(film);
+                listener.onReviewAvailable(filmReview);
             }
         } catch( JSONException ex) {
         }
     }
 
-    public interface OnFilmAvailable{
-        void onFilmAvailable(Film film);
+    public interface OnReviewAvailable{
+        void onReviewAvailable(FilmReview filmReview);
     }
 }

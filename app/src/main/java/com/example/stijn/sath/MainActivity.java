@@ -54,25 +54,19 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 //        Film f = new Film(1, "the hangover", "comedy", "3:00", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", 12, h, null, "https://ia.media-imdb.com/images/M/MV5BNDAxMTZmZGItZmM2NC00M2E1LWI1NmEtZjhhODM2MGU0ZmJlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX675_CR0,0,675,999_AL_.jpg");
 //        films.add(f);
 
-
-
-//        Log.i("fuck you", f.toString());
-
-
-        //find Gridview and add adapter
-        GridView gridView = findViewById(R.id.grdFilms);
-        adapter = new FilmAdapter(this, getLayoutInflater(), films);
-        gridView.setAdapter(adapter);
-        gridView.setOnItemClickListener(this);
-
-        adapter.notifyDataSetChanged();
-
         //find spinner
         Spinner spinner = findViewById(R.id.spnrGenre);
         ArrayAdapter<CharSequence> spnrAdapter = ArrayAdapter.createFromResource(this, R.array.genres, android.R.layout.simple_spinner_dropdown_item);
         spnrAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(spnrAdapter);
         spinner.setOnItemSelectedListener(this);
+
+        //find Gridview and add adapter
+        GridView gridView = findViewById(R.id.grdFilms);
+        adapter = new FilmAdapter(this, getLayoutInflater(), films);
+        gridView.setAdapter(adapter);
+        gridView.setOnItemClickListener(this);
+        adapter.notifyDataSetChanged();
 
     }
 
@@ -84,6 +78,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         i.putExtra(IMAGEURL, film.getImageURL());
         i.putExtra(FILMNAME, film.getName());
         i.putExtra(FILMDESCRIPTION, film.getDesription());
+        i.putExtra("filmID", film.getId());
 
         startActivity(i);
     }
