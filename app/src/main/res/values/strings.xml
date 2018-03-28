@@ -6,7 +6,7 @@
         <item>Romance</item>
         <item>Horror</item>
         <item>Fantasy</item>
-        <item>Sci-fi</item>
+        <item>Science Fiction</item>
     </string-array>
     <string name="films">Movies</string>
     <string name="contact">Contact</string>
