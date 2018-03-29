@@ -16,4 +16,6 @@
     <string name="a_chair_description">Kies een stoel</string>
     <string name="reviews">"Reviews: "</string>
     <string name="author">Auteur:</string>
+    <string name="email">Email</string>
+    <string name="phone">Telefoon</string>
 </resources>
