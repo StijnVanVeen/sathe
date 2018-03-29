@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="films">films</string>
+    <string name="contact">Contact</string>
+    <string name="myTickets">Mijn tickets</string>
+    <string name="name">Naam</string>
+    <string name="city">Stad</string>
+    <string name="adress">Adres</string>
+    <string name="zipcode">Postcode</string>
+    <string name="filmTitle">Film titel</string>
+    <string name="order">Bestel tickets</string>
+    <string name="chooseTickets">Kies je tickets</string>
+    <string name="time">"Tijd: "</string>
+    <string name="chairAmount">"Aantal stoelen: "</string>
+    <string name="proceed">Ga verder</string>
+    <string name="a_chair_description">Kies een stoel</string>
+    <string name="reviews">"Reviews: "</string>
+    <string name="author">Auteur:</string>
+</resources>

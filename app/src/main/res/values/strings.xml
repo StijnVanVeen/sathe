@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Sathé</string>
+    <string name="app_name" translatable="false">Sathé</string>
     <string-array name="genres">
         <item>Action</item>
         <item>Thriller</item>
@@ -10,17 +10,17 @@
     </string-array>
     <string name="films">Movies</string>
     <string name="contact">Contact</string>
-    <string name="title_activity_cinema_about">Sathé</string>
+    <string name="title_activity_cinema_about" translatable="false">Sathé</string>
     <string name="myTickets">My tickets</string>
     <string name="name">Name</string>
     <string name="city">City</string>
     <string name="adress">Adress</string>
     <string name="zipcode">Zipcode</string>
-    <string name="colon">: </string>
-    <string name="cinemaName">Sathé</string>
-    <string name="cinemaCity">Rotterdam</string>
-    <string name="cinemaAdress">Cor Kieboomplein 501</string>
-    <string name="cinemaZipcode">3077 MK</string>
+    <string name="colon" translatable="false">: </string>
+    <string name="cinemaName" translatable="false">Sathé</string>
+    <string name="cinemaCity" translatable="false">Rotterdam</string>
+    <string name="cinemaAdress" translatable="false">Cor Kieboomplein 501</string>
+    <string name="cinemaZipcode" translatable="false">3077 MK</string>
 
     <string name="filmTitle">Film title</string>
     <string name="order">Order tickets</string>
@@ -28,7 +28,7 @@
     <string name="time">Time: </string>
     <string name="chairAmount">Amount of chairs: </string>
     <string name="proceed">Proceed</string>
-    <string name="a_chair_description">Kies een stoel.</string>
+    <string name="a_chair_description">Choose a seat</string>
     <string name="reviews">Reviews: </string>
     <string name="author">Author:</string>
 </resources>
