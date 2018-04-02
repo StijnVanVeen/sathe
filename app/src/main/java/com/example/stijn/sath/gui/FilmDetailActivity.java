@@ -89,7 +89,7 @@ public class FilmDetailActivity extends AppCompatActivity implements View.OnClic
                 startActivity(i);
                 break;
             case R.id.mnuContact:
-                i = new Intent(getApplicationContext(), CinemaAbout.class);
+                i = new Intent(getApplicationContext(), CinemaAboutActivity.class);
                 startActivity(i);
                 break;
             default:

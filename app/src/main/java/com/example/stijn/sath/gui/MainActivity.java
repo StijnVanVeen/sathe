@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             case R.id.mnuFilms:
                 break;
             case R.id.mnuContact:
-                i = new Intent(getApplicationContext(), CinemaAbout.class);
+                i = new Intent(getApplicationContext(), CinemaAboutActivity.class);
                 startActivity(i);
                 break;
             default:

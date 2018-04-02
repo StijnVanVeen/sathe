@@ -39,7 +39,7 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".gui.CinemaAbout"
+            android:name=".gui.CinemaAboutActivity"
             android:label="@string/title_activity_cinema_about" />
         <activity android:name=".gui.ETicketActivity" />
         <activity android:name=".gui.FilmDetailActivity" />
