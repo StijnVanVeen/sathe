@@ -1,4 +1,4 @@
-package com.example.stijn.sath;
+package com.example.stijn.sath.gui.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,6 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.stijn.sath.R;
 import com.example.stijn.sath.domain.Film;
 import com.squareup.picasso.Picasso;
 

@@ -1,27 +1,19 @@
-package com.example.stijn.sath;
+package com.example.stijn.sath.gui;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 
-public class OrderOptionsActivity extends AppCompatActivity {
+import com.example.stijn.sath.R;
+
+public class ETicketActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_order_options);
-        Button gotoChairSelection = (Button) findViewById(R.id.btnProceed);
-        gotoChairSelection.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), ChairActivity.class);
-                getApplicationContext().startActivity(intent);
-            }
-        });
+        setContentView(R.layout.activity_eticket);
     }
 
     @Override
@@ -35,10 +27,8 @@ public class OrderOptionsActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         Intent i;
-        switch(id){
+        switch (id) {
             case R.id.mnuMyTickets:
-                i = new Intent(getApplicationContext(), ETicketActivity.class);
-                startActivity(i);
                 break;
             case R.id.mnuFilms:
                 i = new Intent(getApplicationContext(), MainActivity.class);

@@ -1,10 +1,9 @@
-package com.example.stijn.sath;
+package com.example.stijn.sath.gui;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,6 +12,9 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.stijn.sath.dataAccess.FilmReviewAPI;
+import com.example.stijn.sath.gui.adapters.FilmReviewAdapter;
+import com.example.stijn.sath.R;
 import com.example.stijn.sath.domain.FilmReview;
 import com.squareup.picasso.Picasso;
 

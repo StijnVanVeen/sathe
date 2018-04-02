@@ -1,23 +1,22 @@
-package com.example.stijn.sath;
+package com.example.stijn.sath.gui;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.Spinner;
 
-import com.example.stijn.sath.domain.Cinema;
+import com.example.stijn.sath.R;
+import com.example.stijn.sath.dataAccess.CinemaFilmAPI;
 import com.example.stijn.sath.domain.Film;
 import com.example.stijn.sath.domain.Hall;
-import com.example.stijn.sath.domain.Seat;
+import com.example.stijn.sath.gui.adapters.FilmAdapter;
 
 import java.util.ArrayList;
 import java.util.HashMap;

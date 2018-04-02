@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.stijn.sath.OrderOptionsActivity">
+    tools:context="com.example.stijn.sath.gui.OrderOptionsActivity">
 
     <TextView
         android:id="@+id/chooseTickets"

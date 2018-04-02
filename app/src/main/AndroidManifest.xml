@@ -19,7 +19,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".gui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -39,13 +39,13 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".CinemaAbout"
+            android:name=".gui.CinemaAbout"
             android:label="@string/title_activity_cinema_about" />
-        <activity android:name=".ETicketActivity" />
-        <activity android:name=".FilmDetailActivity" />
-        <activity android:name=".OrderOptionsActivity"></activity>
-        <activity android:name=".ChairActivity"></activity>
-        <activity android:name=".PaymentActivity"></activity>
+        <activity android:name=".gui.ETicketActivity" />
+        <activity android:name=".gui.FilmDetailActivity" />
+        <activity android:name=".gui.OrderOptionsActivity"></activity>
+        <activity android:name=".gui.ChairActivity"></activity>
+        <activity android:name=".gui.PaymentActivity"></activity>
     </application>
 
 </manifest>
