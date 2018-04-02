@@ -9,7 +9,9 @@ import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.example.stijn.sath.domain.Cinema;
 import com.example.stijn.sath.domain.Hall;
@@ -18,6 +20,7 @@ import com.example.stijn.sath.domain.Seat;
 import java.util.ArrayList;
 
 public class ChairActivity extends AppCompatActivity {
+    private ArrayList<Seat> seats;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +64,7 @@ public class ChairActivity extends AppCompatActivity {
         h.addSeat(new Seat(6, 1, (ImageButton) findViewById(R.id.R4S6)));
         h.addSeat(new Seat(7, 1, (ImageButton) findViewById(R.id.R4S7)));
         h.addSeat(new Seat(8, 1, (ImageButton) findViewById(R.id.R4S8)));
-        ArrayList<Seat> seats = h.getSeats();
+        seats = h.getSeats();
         for (final Seat seat : seats) {
             final ImageButton seatObject = seat.getSeatObject();
             seatObject.setOnClickListener(new View.OnClickListener() {
@@ -76,6 +79,22 @@ public class ChairActivity extends AppCompatActivity {
                 }
             });
         }
+
+        Button btnConfirm = (Button) findViewById(R.id.btnConfirm);
+        btnConfirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int seatsTaken = 0;
+                for (Seat seat : seats) {
+                    if (seat.getReserved()) {
+                        seatsTaken++;
+                    }
+                }
+                Intent i = new Intent(getApplicationContext(), PaymentActivity.class);
+                i.putExtra("seatsTaken", seatsTaken);
+                startActivity(i);
+            }
+        });
     }
 }
 

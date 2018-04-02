@@ -24,6 +24,8 @@ import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener, CinemaFilmAPI.OnFilmAvailable, AdapterView.OnItemSelectedListener{
 
+    public final static String API_KEY = "7f3a94496635ed67f41c9f80625f3a39";
+
     public final static String IMAGEURL = "filmposter";
     public final static String FILMNAME = "filmname";
     public final static String FILMDESCRIPTION = "filmdescription";

@@ -45,6 +45,7 @@
         <activity android:name=".FilmDetailActivity" />
         <activity android:name=".OrderOptionsActivity"></activity>
         <activity android:name=".ChairActivity"></activity>
+        <activity android:name=".PaymentActivity"></activity>
     </application>
 
 </manifest>
