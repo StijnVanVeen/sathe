@@ -37,10 +37,10 @@
     <string name="author">Author:</string>
 
     <string name="payment_description">Which payment option do you wish to use?</string>
-    <string name="iDeal">iDeal</string>
-    <string name="PayPal">PayPal</string>
-    <string name="CreditCard">CreditCard</string>
+    <string name="iDeal" translatable="false">iDeal</string>
+    <string name="PayPal" translatable="false">PayPal</string>
+    <string name="CreditCard" translatable="false">CreditCard</string>
     <string name="euro">€</string>
     <string name="confirm">confirm</string>
-    <string name="payment_chosen">Paying with iDeal requires you to input your bank account owner\'s name and number.</string>
+    <string name="payment_chosen" translatable="false">Paying with iDeal requires you to input your bank account owner\'s name and number.</string>
 </resources>

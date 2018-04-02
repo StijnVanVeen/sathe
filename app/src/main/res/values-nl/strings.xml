@@ -18,4 +18,6 @@
     <string name="author">Auteur:</string>
     <string name="email">Email</string>
     <string name="phone">Telefoon</string>
+    <string name="payment_description">Welke betaalmethode wilt u gebruiken?</string>
+    <string name="confirm">Bevestig</string>
 </resources>
