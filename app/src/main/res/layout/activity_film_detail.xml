@@ -46,35 +46,32 @@
         android:id="@+id/filmDescription"
         android:layout_width="0dp"
         android:layout_height="113dp"
-        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:scrollHorizontally="false"
         android:scrollbars="vertical"
         android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/filmPoster"
-        app:layout_constraintVertical_bias="0.00999999" />
+        app:layout_constraintTop_toBottomOf="@+id/filmPoster" />
 
     <TextView
         android:id="@+id/reviews"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/reviews"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/filmDescription"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/filmDescription" />
 
     <ListView
         android:id="@+id/reviewsList"
-        android:layout_width="368dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
