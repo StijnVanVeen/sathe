@@ -20,10 +20,10 @@
     <string name="email">Email</string>
     <string name="colon" translatable="false">: </string>
     <string name="cinemaName" translatable="false">Sathé</string>
-    <string name="cinemaCity" translatable="false">Rotterdam</string>
-    <string name="cinemaAdress" translatable="false">Cor Kieboomplein 501</string>
-    <string name="cinemaZipcode" translatable="false">3077 MK</string>
-    <string name="cinemaPhoneNumber" translatable="false">078-6295584</string>
+    <string name="cinemaCity" translatable="false">Breda</string>
+    <string name="cinemaAdress" translatable="false">Lovensdijkstraat 61</string>
+    <string name="cinemaZipcode" translatable="false">4818 AJ</string>
+    <string name="cinemaPhoneNumber" translatable="false">088-5257500</string>
     <string name="cinemaEmailAdress" translatable="false">sathé@sathe.nl</string>
 
     <string name="filmTitle">Film title</string>

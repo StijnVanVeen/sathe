@@ -44,7 +44,7 @@ public class CinemaAboutActivity extends AppCompatActivity implements OnMapReady
         mMap = googleMap;
 
         // Add a marker in Rotterdam and move the camera
-        LatLng phateDeKuip = new LatLng(51.896906, 4.522760);
+        LatLng phateDeKuip = new LatLng(51.585920, 4.793767);
         mMap.addMarker(new MarkerOptions().position(phateDeKuip).title("Marker MovieTheater "));
 
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(phateDeKuip, 17));
