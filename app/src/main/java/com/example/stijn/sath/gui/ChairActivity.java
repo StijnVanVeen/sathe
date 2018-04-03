@@ -21,13 +21,15 @@ import java.util.ArrayList;
 
 public class ChairActivity extends AppCompatActivity {
     private ArrayList<Seat> seats;
+    private String filmName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chair);
 
-        //Intent i = getIntent();
+        Intent i = getIntent();
+        filmName = i.getStringExtra("filmName");
         //Cinema c = (Cinema) i.getSerializableExtra("cinema");
         //Hall h = c.getMainHall();
         Cinema c = new Cinema("Sathé", "Lovensdijkstraat 61", "Breda", "4818AJ");
@@ -84,14 +86,18 @@ public class ChairActivity extends AppCompatActivity {
         btnConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ArrayList<Seat> seatss = new ArrayList<>();
                 int seatsTaken = 0;
                 for (Seat seat : seats) {
                     if (seat.getReserved()) {
                         seatsTaken++;
+                        seatss.add(seat);
                     }
                 }
                 Intent i = new Intent(getApplicationContext(), PaymentActivity.class);
                 i.putExtra("seatsTaken", seatsTaken);
+                i.putExtra("seatList", seatss);
+                i.putExtra("filmName" , filmName);
                 startActivity(i);
             }
         });
