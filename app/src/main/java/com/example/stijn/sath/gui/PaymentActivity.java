@@ -1,11 +1,13 @@
 package com.example.stijn.sath.gui;
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.opengl.ETC1;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -29,8 +31,9 @@ public class PaymentActivity extends AppCompatActivity {
     public TextView desc;
     public TextView name;
     public TextView pass;
+    public TextView paymentAmount;
     public String filmName;
-    public ArrayList<Seat> filmseats = new ArrayList<>();
+    public ArrayList<Integer> filmseats;
     private SQLiteDatabase database;
 
     @Override
@@ -39,17 +42,18 @@ public class PaymentActivity extends AppCompatActivity {
         setContentView(R.layout.activity_payment_options);
         Intent i = getIntent();
         filmName = i.getStringExtra("filmName");
-        filmseats = (ArrayList<Seat>) i.getSerializableExtra("seats");
+        filmseats = i.getIntegerArrayListExtra("seatList");
         ETicketDatabaseHelper eTicketDatabaseHelper = new ETicketDatabaseHelper(getApplicationContext());
         database = eTicketDatabaseHelper.getWritableDatabase();
         setButtons();
     }
 
-    private ArrayList createETickets(ArrayList<Seat> filmseats){
+    private ArrayList createETickets(ArrayList<Integer> filmseats){
+        Log.i("SSSSSSSSS", String.valueOf(filmseats.size()));
         ArrayList<ETicket> etickets = new ArrayList<>();
         Random ran = new Random();
-        for (Seat s : filmseats){
-            ETicket et = new ETicket(ran.nextInt(5000) + 1, s.getSeatNumber(), s.getHallNumber(), filmName);
+        for (int s : filmseats){
+            ETicket et = new ETicket(ran.nextInt(5000) + 1, s, 1, filmName);
             etickets.add(et);
         }
         return etickets;
@@ -68,6 +72,11 @@ public class PaymentActivity extends AppCompatActivity {
         final EditText inputPass = (EditText) findViewById(R.id.payment_input_password_acc);
 
         Button confirmBtn = (Button) findViewById(R.id.payment_confirm);
+
+        paymentAmount = (TextView) findViewById(R.id.payment_amount);
+        int price = filmseats.size() * 8;
+        paymentAmount.setText(String.valueOf(price));
+
 
         iDeal.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,6 +108,22 @@ public class PaymentActivity extends AppCompatActivity {
         confirmBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(inputName.getText() == null && inputPass == null){
+                    Intent i = new Intent(getApplicationContext(),PaymentFailActivity.class);
+                    startActivity(i);
+                }else{
+                    ArrayList<ETicket> etics = createETickets(filmseats);
+                    for (ETicket e : etics){
+                        ContentValues cv = new ContentValues();
+                        cv.put("ticketNummer", e.getTicketNumber());
+                        cv.put("filmName", e.getFilm());
+                        cv.put("seat", e.getSeatNumber());
+                        cv.put("hall", e.getHallNumber());
+                        database.insert("ticket", null, cv);
+                    }
+                    Intent i = new Intent(getApplicationContext(), PaymentConfirmActivity.class);
+                    startActivity(i);
+                }
                 String iName = inputName.getText().toString();
                 String iPass = inputPass.getText().toString();
                 if (choices.getCheckedRadioButtonId() == iDeal.getId()) {
