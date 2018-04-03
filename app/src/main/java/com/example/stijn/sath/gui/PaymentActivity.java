@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -40,6 +41,8 @@ public class PaymentActivity extends AppCompatActivity {
         final TextView pass = (TextView) findViewById(R.id.payment_password_acc);
         EditText inputPass = (EditText) findViewById(R.id.payment_input_password_acc);
 
+        Button confirmBtn = (Button) findViewById(R.id.payment_confirm);
+
         iDeal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -64,6 +67,13 @@ public class PaymentActivity extends AppCompatActivity {
                 desc.setText("Paying with CreditCard requires you to input your creditcard owner's name and number.");
                 name.setText("Input your creditcard owner's name here.");
                 pass.setText("Input your creditcard number here.");
+            }
+        });
+
+        confirmBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
             }
         });
     }

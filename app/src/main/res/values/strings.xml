@@ -44,4 +44,9 @@
     <string name="euro" translatable="false">€</string>
     <string name="confirm">confirm</string>
     <string name="payment_chosen" translatable="false">Paying with iDeal requires you to input your bank account owner\'s name and number.</string>
+
+    <string name="payment_confirm_button">OK</string>
+    <string name="payment_confirm_text">Payment successful.</string>
+    <string name="payment_fail_button">Back</string>
+    <string name="payment_fail_text">Payment failed.</string>
 </resources>
