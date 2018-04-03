@@ -24,6 +24,7 @@ public class FilmDetailActivity extends AppCompatActivity implements View.OnClic
 
     private ArrayList<FilmReview> filmReviews = new ArrayList<>();
     private FilmReviewAdapter filmReviewAdapter = null;
+    private String filmNameF;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +42,7 @@ public class FilmDetailActivity extends AppCompatActivity implements View.OnClic
         String filmName = extras.getString(MainActivity.FILMNAME);
         String filmDescription = extras.getString(MainActivity.FILMDESCRIPTION);
         int filmID = extras.getInt(MainActivity.FILMID);
+        filmNameF = extras.getString(MainActivity.FILMNAME);
 
         fetchReviews(filmID);
 
@@ -65,6 +67,7 @@ public class FilmDetailActivity extends AppCompatActivity implements View.OnClic
     @Override
     public void onClick(View view) {
         Intent i = new Intent(getApplicationContext(), OrderOptionsActivity.class);
+        i.putExtra("filmName", filmNameF);
         startActivity(i);
     }
 
