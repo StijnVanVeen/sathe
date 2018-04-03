@@ -1,12 +1,17 @@
 package com.example.stijn.sath.gui;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 
+import com.example.stijn.sath.dataAccess.ETicketDatabaseHelper;
 import com.example.stijn.sath.gui.adapters.ETicketAdapter;
 import com.example.stijn.sath.domain.ETicket;
 
@@ -18,6 +23,9 @@ public class ETicketActivity extends AppCompatActivity {
 
     private ArrayList<ETicket> tickets = new ArrayList<>();
     private ETicketAdapter adapter;
+    private SQLiteDatabase database;
+    private Cursor cursor;
+    private static final String TAG = ETicketActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +39,46 @@ public class ETicketActivity extends AppCompatActivity {
 
         ETicket tic = new ETicket(1234, 2, 1, "Avenger");
         tickets.add(tic);
+
+        ETicketDatabaseHelper eTicketDatabaseHelper = new ETicketDatabaseHelper(getApplicationContext());
+        database = eTicketDatabaseHelper.getWritableDatabase();
     }
+
+    private boolean checkIfInDatabase(){
+        Log.i(TAG, "checkIfInDatabase(): is checking..");
+        try {
+            cursor = database.rawQuery("SELECT * FROM ticket LIMIT 1", null);
+        }catch (SQLException e){
+            Log.e(TAG, "checkIfInDatabase(): Failed..");
+            e.printStackTrace();
+        }
+
+        if(!cursor.moveToFirst()){
+            Log.i(TAG, "checkIfInDatabase(): Cursor is empty.." );
+            return false;
+        }
+        Log.i(TAG, "checkIfInDatabase(): cursor is filled, database not empty..");
+        return true;
+    }
+
+    public void loadETicketsFromDatabase(){
+        Log.i(TAG, "loadETicketsFromDatabase(): Loading all etickets from the database");
+        cursor = database.rawQuery("SELECT * FROM ticket", null);
+        try {
+            while (cursor.moveToNext()){
+                String ticketNumber = String.valueOf(cursor.getInt(cursor.getColumnIndex("ticketNummer")));
+                String filmName = cursor.getString(cursor.getColumnIndex("filmName"));
+                int seat = cursor.getInt(cursor.getColumnIndex("seat"));
+                int hall = cursor.getInt(cursor.getColumnIndex("hall"));
+                ETicket ticket = new ETicket(Integer.valueOf(ticketNumber), seat, hall, filmName);
+                tickets.add(ticket);
+            }
+        }finally {
+            cursor.close();
+            adapter.notifyDataSetChanged();
+        }
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
