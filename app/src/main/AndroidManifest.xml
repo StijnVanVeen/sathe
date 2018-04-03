@@ -43,7 +43,6 @@
             android:label="@string/title_activity_cinema_about" />
         <activity android:name=".gui.ETicketActivity" />
         <activity android:name=".gui.FilmDetailActivity" />
-        <activity android:name=".gui.OrderOptionsActivity"></activity>
         <activity android:name=".gui.ChairActivity"></activity>
         <activity android:name=".gui.PaymentActivity"></activity>
     </application>

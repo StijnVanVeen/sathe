@@ -64,7 +64,7 @@ public class FilmDetailActivity extends AppCompatActivity implements View.OnClic
 
     @Override
     public void onClick(View view) {
-        Intent i = new Intent(getApplicationContext(), OrderOptionsActivity.class);
+        Intent i = new Intent(getApplicationContext(), ChairActivity.class);
         startActivity(i);
     }
 
