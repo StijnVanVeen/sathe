@@ -37,11 +37,9 @@ public class ETicketActivity extends AppCompatActivity {
         listView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
 
-        ETicket tic = new ETicket(1234, 2, 1, "Avenger");
-        tickets.add(tic);
-
         ETicketDatabaseHelper eTicketDatabaseHelper = new ETicketDatabaseHelper(getApplicationContext());
         database = eTicketDatabaseHelper.getWritableDatabase();
+        loadETicketsFromDatabase();
     }
 
     private boolean checkIfInDatabase(){
