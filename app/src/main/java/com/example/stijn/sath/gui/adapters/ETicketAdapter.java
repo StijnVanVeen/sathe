@@ -14,6 +14,7 @@ import com.example.stijn.sath.domain.ETicket;
 import net.glxn.qrgen.android.QRCode;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 /**
  * Created by stijn on 2-4-2018.
@@ -64,7 +65,7 @@ public class ETicketAdapter extends BaseAdapter {
         viewHolder.filmTitle.setText(et.getFilm());
         viewHolder.seatNumber.setText(Integer.toString(et.getSeatNumber()));
         viewHolder.hallNumber.setText(Integer.toString(et.getHallNumber()));
-        viewHolder.qrCode.setImageBitmap(QRCode.from("TicketNumber: " + et.getTicketNumber() + " Film: " + et.getFilm() + " Hall: " + et.getHallNumber() + " Seat: " + et.getSeatNumber()).bitmap());
+        viewHolder.qrCode.setImageBitmap(QRCode.from("id: " + UUID.randomUUID().toString() + "\nTicketNumber: " + et.getTicketNumber() + "\nFilm: " + et.getFilm() + "\nHall: " + et.getHallNumber() + "\nSeat: " + et.getSeatNumber()).bitmap());
         return view;
     }
 

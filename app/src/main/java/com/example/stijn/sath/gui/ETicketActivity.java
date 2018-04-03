@@ -63,19 +63,22 @@ public class ETicketActivity extends AppCompatActivity {
 
     public void loadETicketsFromDatabase(){
         Log.i(TAG, "loadETicketsFromDatabase(): Loading all etickets from the database");
-        cursor = database.rawQuery("SELECT * FROM ticket", null);
-        try {
-            while (cursor.moveToNext()){
-                String ticketNumber = String.valueOf(cursor.getInt(cursor.getColumnIndex("ticketNummer")));
-                String filmName = cursor.getString(cursor.getColumnIndex("filmName"));
-                int seat = cursor.getInt(cursor.getColumnIndex("seat"));
-                int hall = cursor.getInt(cursor.getColumnIndex("hall"));
-                ETicket ticket = new ETicket(Integer.valueOf(ticketNumber), seat, hall, filmName);
-                tickets.add(ticket);
+        tickets.clear();
+        if(checkIfInDatabase()){
+            cursor = database.rawQuery("SELECT * FROM ticket", null);
+            try {
+                while (cursor.moveToNext()){
+                    String ticketNumber = String.valueOf(cursor.getInt(cursor.getColumnIndex("ticketNummer")));
+                    String filmName = cursor.getString(cursor.getColumnIndex("filmName"));
+                    int seat = cursor.getInt(cursor.getColumnIndex("seat"));
+                    int hall = cursor.getInt(cursor.getColumnIndex("hall"));
+                    ETicket ticket = new ETicket(Integer.valueOf(ticketNumber), seat, hall, filmName);
+                    tickets.add(ticket);
+                }
+            }finally {
+                cursor.close();
+                adapter.notifyDataSetChanged();
             }
-        }finally {
-            cursor.close();
-            adapter.notifyDataSetChanged();
         }
     }
 
