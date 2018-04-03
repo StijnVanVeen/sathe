@@ -1,6 +1,7 @@
 package com.example.stijn.sath.gui;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.opengl.ETC1;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
@@ -13,6 +14,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.example.stijn.sath.R;
+import com.example.stijn.sath.dataAccess.ETicketDatabaseHelper;
 import com.example.stijn.sath.domain.ETicket;
 import com.example.stijn.sath.domain.Seat;
 
@@ -29,6 +31,7 @@ public class PaymentActivity extends AppCompatActivity {
     public TextView pass;
     public String filmName;
     public ArrayList<Seat> filmseats = new ArrayList<>();
+    private SQLiteDatabase database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +40,8 @@ public class PaymentActivity extends AppCompatActivity {
         Intent i = getIntent();
         filmName = i.getStringExtra("filmName");
         filmseats = (ArrayList<Seat>) i.getSerializableExtra("seats");
-
+        ETicketDatabaseHelper eTicketDatabaseHelper = new ETicketDatabaseHelper(getApplicationContext());
+        database = eTicketDatabaseHelper.getWritableDatabase();
         setButtons();
     }
 

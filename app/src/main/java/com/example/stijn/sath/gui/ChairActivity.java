@@ -86,12 +86,12 @@ public class ChairActivity extends AppCompatActivity {
         btnConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ArrayList<Seat> seatss = new ArrayList<>();
+                ArrayList seatss = new ArrayList<>();
                 int seatsTaken = 0;
                 for (Seat seat : seats) {
                     if (seat.getReserved()) {
                         seatsTaken++;
-                        seatss.add(seat);
+                        seatss.add(seat.getSeatNumber());
                     }
                 }
                 Intent i = new Intent(getApplicationContext(), PaymentActivity.class);
