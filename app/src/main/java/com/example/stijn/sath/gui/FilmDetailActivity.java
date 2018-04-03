@@ -40,7 +40,7 @@ public class FilmDetailActivity extends AppCompatActivity implements View.OnClic
         String imageURL = extras.getString(MainActivity.IMAGEURL);
         String filmName = extras.getString(MainActivity.FILMNAME);
         String filmDescription = extras.getString(MainActivity.FILMDESCRIPTION);
-        int filmID = extras.getInt("filmID");
+        int filmID = extras.getInt(MainActivity.FILMID);
 
         fetchReviews(filmID);
 
