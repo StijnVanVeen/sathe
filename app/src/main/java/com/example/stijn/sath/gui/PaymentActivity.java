@@ -56,16 +56,16 @@ public class PaymentActivity extends AppCompatActivity {
     }
 
     private void setButtons() {
-        RadioGroup choices = (RadioGroup) findViewById(R.id.radio_group);
-        RadioButton iDeal = (RadioButton) findViewById(R.id.option_iDeal);
-        RadioButton payPal = (RadioButton) findViewById(R.id.option_PayPal);
-        RadioButton creditCard = (RadioButton) findViewById(R.id.option_CreditCard);
+        final RadioGroup choices = (RadioGroup) findViewById(R.id.radio_group);
+        final RadioButton iDeal = (RadioButton) findViewById(R.id.option_iDeal);
+        final RadioButton payPal = (RadioButton) findViewById(R.id.option_PayPal);
+        final RadioButton creditCard = (RadioButton) findViewById(R.id.option_CreditCard);
 
         final TextView desc = (TextView) findViewById(R.id.payment_chosen);
         final TextView name = (TextView) findViewById(R.id.payment_name);
-        EditText inputName = (EditText) findViewById(R.id.payment_input_name);
+        final EditText inputName = (EditText) findViewById(R.id.payment_input_name);
         final TextView pass = (TextView) findViewById(R.id.payment_password_acc);
-        EditText inputPass = (EditText) findViewById(R.id.payment_input_password_acc);
+        final EditText inputPass = (EditText) findViewById(R.id.payment_input_password_acc);
 
         Button confirmBtn = (Button) findViewById(R.id.payment_confirm);
 
@@ -99,7 +99,33 @@ public class PaymentActivity extends AppCompatActivity {
         confirmBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                String iName = inputName.getText().toString();
+                String iPass = inputPass.getText().toString();
+                if (choices.getCheckedRadioButtonId() == iDeal.getId()) {
+                    if (!iName.isEmpty() && iPass.matches("[A-Z0-9]*")) {
+                        Intent i = new Intent(getApplicationContext(), PaymentConfirmActivity.class);
+                        startActivity(i);
+                    } else {
+                        Intent i = new Intent(getApplicationContext(), PaymentFailActivity.class);
+                        startActivity(i);
+                    }
+                } else if (choices.getCheckedRadioButtonId() == payPal.getId()) {
+                    if (iName.matches("^(.+)@(.+)$") && !iPass.isEmpty()) {
+                        Intent i = new Intent(getApplicationContext(), PaymentConfirmActivity.class);
+                        startActivity(i);
+                    } else {
+                        Intent i = new Intent(getApplicationContext(), PaymentFailActivity.class);
+                        startActivity(i);
+                    }
+                } else if (choices.getCheckedRadioButtonId() == creditCard.getId()) {
+                    if (!iName.isEmpty() && iPass.matches("[0-9]+")) {
+                        Intent i = new Intent(getApplicationContext(), PaymentConfirmActivity.class);
+                        startActivity(i);
+                    } else {
+                        Intent i = new Intent(getApplicationContext(), PaymentFailActivity.class);
+                        startActivity(i);
+                    }
+                }
             }
         });
     }
