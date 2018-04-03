@@ -31,6 +31,7 @@ public class PaymentActivity extends AppCompatActivity {
     public TextView desc;
     public TextView name;
     public TextView pass;
+    public TextView paymentAmount;
     public String filmName;
     public ArrayList<Integer> filmseats;
     private SQLiteDatabase database;
@@ -71,6 +72,11 @@ public class PaymentActivity extends AppCompatActivity {
         final EditText inputPass = (EditText) findViewById(R.id.payment_input_password_acc);
 
         Button confirmBtn = (Button) findViewById(R.id.payment_confirm);
+
+        paymentAmount = (TextView) findViewById(R.id.payment_amount);
+        int price = filmseats.size() * 8;
+        paymentAmount.setText(String.valueOf(price));
+
 
         iDeal.setOnClickListener(new View.OnClickListener() {
             @Override
