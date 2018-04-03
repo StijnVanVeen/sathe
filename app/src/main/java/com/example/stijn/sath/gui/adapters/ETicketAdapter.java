@@ -1,4 +1,4 @@
-package com.example.stijn.sath;
+package com.example.stijn.sath.gui.adapters;
 
 import android.graphics.Bitmap;
 import android.view.LayoutInflater;
@@ -8,6 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.stijn.sath.R;
 import com.example.stijn.sath.domain.ETicket;
 
 import net.glxn.qrgen.android.QRCode;
