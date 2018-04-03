@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/a_payment_done_button"
+        android:id="@+id/a_payment_fail_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -22,9 +22,9 @@
         app:layout_constraintVertical_bias="0.85" />
 
     <TextView
-        android:id="@+id/a_payment_done_text"
-        android:layout_width="156dp"
-        android:layout_height="72dp"
+        android:id="@+id/a_payment_fail_text"
+        android:layout_width="174dp"
+        android:layout_height="94dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
