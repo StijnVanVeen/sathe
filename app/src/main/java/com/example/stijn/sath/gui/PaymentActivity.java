@@ -108,27 +108,20 @@ public class PaymentActivity extends AppCompatActivity {
         confirmBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(inputName.getText() == null && inputPass == null){
-                    Intent i = new Intent(getApplicationContext(),PaymentFailActivity.class);
-                    startActivity(i);
-                }else{
-                    ArrayList<ETicket> etics = createETickets(filmseats);
-                    for (ETicket e : etics){
-                        ContentValues cv = new ContentValues();
-                        cv.put("ticketNummer", e.getTicketNumber());
-                        cv.put("filmName", e.getFilm());
-                        cv.put("seat", e.getSeatNumber());
-                        cv.put("hall", e.getHallNumber());
-                        database.insert("ticket", null, cv);
-                    }
-                    Intent i = new Intent(getApplicationContext(), PaymentConfirmActivity.class);
-                    startActivity(i);
-                }
                 String iName = inputName.getText().toString();
                 String iPass = inputPass.getText().toString();
                 if (choices.getCheckedRadioButtonId() == iDeal.getId()) {
                     if (!iName.isEmpty() && iPass.matches("[A-Z0-9]*")) {
                         Intent i = new Intent(getApplicationContext(), PaymentConfirmActivity.class);
+                        ArrayList<ETicket> etics = createETickets(filmseats);
+                        for (ETicket e : etics){
+                            ContentValues cv = new ContentValues();
+                            cv.put("ticketNummer", e.getTicketNumber());
+                            cv.put("filmName", e.getFilm());
+                            cv.put("seat", e.getSeatNumber());
+                            cv.put("hall", e.getHallNumber());
+                            database.insert("ticket", null, cv);
+                        }
                         startActivity(i);
                     } else {
                         Intent i = new Intent(getApplicationContext(), PaymentFailActivity.class);
@@ -137,6 +130,15 @@ public class PaymentActivity extends AppCompatActivity {
                 } else if (choices.getCheckedRadioButtonId() == payPal.getId()) {
                     if (iName.matches("^(.+)@(.+)$") && !iPass.isEmpty()) {
                         Intent i = new Intent(getApplicationContext(), PaymentConfirmActivity.class);
+                        ArrayList<ETicket> etics = createETickets(filmseats);
+                        for (ETicket e : etics){
+                            ContentValues cv = new ContentValues();
+                            cv.put("ticketNummer", e.getTicketNumber());
+                            cv.put("filmName", e.getFilm());
+                            cv.put("seat", e.getSeatNumber());
+                            cv.put("hall", e.getHallNumber());
+                            database.insert("ticket", null, cv);
+                        }
                         startActivity(i);
                     } else {
                         Intent i = new Intent(getApplicationContext(), PaymentFailActivity.class);
@@ -145,6 +147,15 @@ public class PaymentActivity extends AppCompatActivity {
                 } else if (choices.getCheckedRadioButtonId() == creditCard.getId()) {
                     if (!iName.isEmpty() && iPass.matches("[0-9]+")) {
                         Intent i = new Intent(getApplicationContext(), PaymentConfirmActivity.class);
+                        ArrayList<ETicket> etics = createETickets(filmseats);
+                        for (ETicket e : etics){
+                            ContentValues cv = new ContentValues();
+                            cv.put("ticketNummer", e.getTicketNumber());
+                            cv.put("filmName", e.getFilm());
+                            cv.put("seat", e.getSeatNumber());
+                            cv.put("hall", e.getHallNumber());
+                            database.insert("ticket", null, cv);
+                        }
                         startActivity(i);
                     } else {
                         Intent i = new Intent(getApplicationContext(), PaymentFailActivity.class);
