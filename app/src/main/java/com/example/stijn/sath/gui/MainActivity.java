@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public final static String IMAGEURL = "filmposter";
     public final static String FILMNAME = "filmname";
     public final static String FILMDESCRIPTION = "filmdescription";
+    public final static String FILMID = "filmId";
 
     private ArrayList<Film> films = new ArrayList<>();
     private final static String TAG = MainActivity.class.getSimpleName();
@@ -79,7 +80,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         i.putExtra(IMAGEURL, film.getImageURL());
         i.putExtra(FILMNAME, film.getName());
         i.putExtra(FILMDESCRIPTION, film.getDesription());
-        i.putExtra("filmID", film.getId());
+        i.putExtra(FILMID, film.getId());
 
         startActivity(i);
     }
