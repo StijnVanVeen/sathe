@@ -23,11 +23,10 @@ import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener, CinemaFilmAPI.OnFilmAvailable, AdapterView.OnItemSelectedListener{
 
-    public final static String API_KEY = "7f3a94496635ed67f41c9f80625f3a39";
-
     public final static String IMAGEURL = "filmposter";
     public final static String FILMNAME = "filmname";
     public final static String FILMDESCRIPTION = "filmdescription";
+    public final static String FILMID = "filmId";
 
     private ArrayList<Film> films = new ArrayList<>();
     private final static String TAG = MainActivity.class.getSimpleName();
@@ -39,21 +38,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         LoadAllGenres();
-        //final Cinema c = new Cinema("Sathé", "Lovensdijkstraat 61", "Breda", "4818AJ");
-        Hall h = new Hall(1);
-        //Seat s1 = new Seat(1, h.getHallNumber());
-        //h.addSeat(s1);
-        //Seat s2 = new Seat(2, h.getHallNumber());
-        //h.addSeat(s2);
-        //Seat s3 = new Seat(3, h.getHallNumber());
-        //h.addSeat(s3);
-        //Seat s4 = new Seat(4, h.getHallNumber());
-        //h.addSeat(s4);
-        //c.addHall(h);
-
-
-//        Film f = new Film(1, "the hangover", "comedy", "3:00", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", 12, h, null, "https://ia.media-imdb.com/images/M/MV5BNDAxMTZmZGItZmM2NC00M2E1LWI1NmEtZjhhODM2MGU0ZmJlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX675_CR0,0,675,999_AL_.jpg");
-//        films.add(f);
 
         //find spinner
         Spinner spinner = findViewById(R.id.spnrGenre);
@@ -79,7 +63,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         i.putExtra(IMAGEURL, film.getImageURL());
         i.putExtra(FILMNAME, film.getName());
         i.putExtra(FILMDESCRIPTION, film.getDesription());
-        i.putExtra("filmID", film.getId());
+        i.putExtra(FILMID, film.getId());
 
         startActivity(i);
     }
@@ -89,36 +73,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         Log.i(TAG, "onFilmAvailable():" + film.toString());
         films.add(film);
         adapter.notifyDataSetChanged();
-    }
-
-    //adds custom menu
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.available_activities, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        Intent i;
-        switch(id){
-            case R.id.mnuMyTickets:
-                i = new Intent(getApplicationContext(), ETicketActivity.class);
-                startActivity(i);
-                break;
-            case R.id.mnuFilms:
-                break;
-            case R.id.mnuContact:
-                i = new Intent(getApplicationContext(), CinemaAboutActivity.class);
-                startActivity(i);
-                break;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-        return true;
     }
 
     @Override
@@ -168,5 +122,34 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     break;
             }
         }
+    }
+
+    //adds custom menu
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.available_activities, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        Intent i;
+        switch(id){
+            case R.id.mnuMyTickets:
+                i = new Intent(getApplicationContext(), ETicketActivity.class);
+                startActivity(i);
+                break;
+            case R.id.mnuFilms:
+                break;
+            case R.id.mnuContact:
+                i = new Intent(getApplicationContext(), CinemaAboutActivity.class);
+                startActivity(i);
+                break;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+        return true;
     }
 }

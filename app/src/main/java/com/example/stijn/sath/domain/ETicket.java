@@ -8,13 +8,13 @@ public class ETicket {
     private int ticketNumber;
     private int seatNumber;
     private int hallNumber;
-    private Film film;
+    private String filmName;
 
-    public ETicket(int ticketNumber, int seatNumber, int hallNumber, Film film) {
+    public ETicket(int ticketNumber, int seatNumber, int hallNumber, String filmName) {
         this.ticketNumber = ticketNumber;
         this.seatNumber = seatNumber;
         this.hallNumber = hallNumber;
-        this.film = film;
+        this.filmName = filmName;
     }
 
     public int getTicketNumber() {
@@ -29,8 +29,8 @@ public class ETicket {
         return hallNumber;
     }
 
-    public Film getFilm() {
-        return film;
+    public String getFilm() {
+        return filmName;
     }
 
     @Override
@@ -39,7 +39,7 @@ public class ETicket {
                 "ticketNumber=" + ticketNumber +
                 ", seatNumber=" + seatNumber +
                 ", hallNumber=" + hallNumber +
-                ", film=" + film +
+                ", film=" + filmName +
                 '}';
     }
 }
