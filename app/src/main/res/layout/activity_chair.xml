@@ -59,224 +59,224 @@
             android:layout_gravity="start|top"
             android:layout_margin="2dp"
             android:backgroundTint="#758B7D"
-            app:srcCompat="@android:drawable/stat_sys_upload" />
+            app:srcCompat="@drawable/ic_event_seat_black_24dp" />
 
         <ImageButton
             android:id="@+id/R1S2"
             android:layout_gravity="start|top"
             android:layout_margin="2dp"
             android:backgroundTint="#758B7D"
-            app:srcCompat="@android:drawable/stat_sys_upload" />
+            app:srcCompat="@drawable/ic_event_seat_black_24dp" />
 
         <ImageButton
             android:id="@+id/R1S3"
             android:layout_gravity="start|top"
             android:layout_margin="2dp"
             android:backgroundTint="#758B7D"
-            app:srcCompat="@android:drawable/stat_sys_upload" />
+            app:srcCompat="@drawable/ic_event_seat_black_24dp" />
 
         <ImageButton
             android:id="@+id/R1S4"
             android:layout_gravity="start|top"
             android:layout_margin="2dp"
             android:backgroundTint="#758B7D"
-            app:srcCompat="@android:drawable/stat_sys_upload" />
+            app:srcCompat="@drawable/ic_event_seat_black_24dp" />
 
         <ImageButton
             android:id="@+id/R1S5"
             android:layout_gravity="start|top"
             android:layout_margin="2dp"
             android:backgroundTint="#758B7D"
-            app:srcCompat="@android:drawable/stat_sys_upload" />
+            app:srcCompat="@drawable/ic_event_seat_black_24dp" />
 
         <ImageButton
             android:id="@+id/R1S6"
             android:layout_gravity="start|top"
             android:layout_margin="2dp"
             android:backgroundTint="#758B7D"
-            app:srcCompat="@android:drawable/stat_sys_upload" />
+            app:srcCompat="@drawable/ic_event_seat_black_24dp" />
 
         <ImageButton
             android:id="@+id/R1S7"
             android:layout_gravity="start|top"
             android:layout_margin="2dp"
             android:backgroundTint="#758B7D"
-            app:srcCompat="@android:drawable/stat_sys_upload" />
+            app:srcCompat="@drawable/ic_event_seat_black_24dp" />
 
         <ImageButton
             android:id="@+id/R1S8"
             android:layout_gravity="start|top"
             android:layout_margin="2dp"
             android:backgroundTint="#758B7D"
-            app:srcCompat="@android:drawable/stat_sys_upload" />
+            app:srcCompat="@drawable/ic_event_seat_black_24dp" />
 
         <ImageButton
             android:id="@+id/R2S1"
             android:layout_gravity="start|top"
             android:layout_margin="2dp"
             android:backgroundTint="#758B7D"
-            app:srcCompat="@android:drawable/stat_sys_upload" />
+            app:srcCompat="@drawable/ic_event_seat_black_24dp" />
 
         <ImageButton
             android:id="@+id/R2S2"
             android:layout_gravity="start|top"
             android:layout_margin="2dp"
             android:backgroundTint="#758B7D"
-            app:srcCompat="@android:drawable/stat_sys_upload" />
+            app:srcCompat="@drawable/ic_event_seat_black_24dp" />
 
         <ImageButton
             android:id="@+id/R2S3"
             android:layout_gravity="start|top"
             android:layout_margin="2dp"
             android:backgroundTint="#758B7D"
-            app:srcCompat="@android:drawable/stat_sys_upload" />
+            app:srcCompat="@drawable/ic_event_seat_black_24dp" />
 
         <ImageButton
             android:id="@+id/R2S4"
             android:layout_gravity="start|top"
             android:layout_margin="2dp"
             android:backgroundTint="#758B7D"
-            app:srcCompat="@android:drawable/stat_sys_upload" />
+            app:srcCompat="@drawable/ic_event_seat_black_24dp" />
 
         <ImageButton
             android:id="@+id/R2S5"
             android:layout_gravity="start|top"
             android:layout_margin="2dp"
             android:backgroundTint="#758B7D"
-            app:srcCompat="@android:drawable/stat_sys_upload" />
+            app:srcCompat="@drawable/ic_event_seat_black_24dp" />
 
         <ImageButton
             android:id="@+id/R2S6"
             android:layout_gravity="start|top"
             android:layout_margin="2dp"
             android:backgroundTint="#758B7D"
-            app:srcCompat="@android:drawable/stat_sys_upload" />
+            app:srcCompat="@drawable/ic_event_seat_black_24dp" />
 
         <ImageButton
             android:id="@+id/R2S7"
             android:layout_gravity="start|top"
             android:layout_margin="2dp"
             android:backgroundTint="#758B7D"
-            app:srcCompat="@android:drawable/stat_sys_upload" />
+            app:srcCompat="@drawable/ic_event_seat_black_24dp" />
 
         <ImageButton
             android:id="@+id/R2S8"
             android:layout_gravity="start|top"
             android:layout_margin="2dp"
             android:backgroundTint="#758B7D"
-            app:srcCompat="@android:drawable/stat_sys_upload" />
+            app:srcCompat="@drawable/ic_event_seat_black_24dp" />
 
         <ImageButton
             android:id="@+id/R3S1"
             android:layout_gravity="start|top"
             android:layout_margin="2dp"
             android:backgroundTint="#758B7D"
-            app:srcCompat="@android:drawable/stat_sys_upload" />
+            app:srcCompat="@drawable/ic_event_seat_black_24dp" />
 
         <ImageButton
             android:id="@+id/R3S2"
             android:layout_gravity="start|top"
             android:layout_margin="2dp"
             android:backgroundTint="#758B7D"
-            app:srcCompat="@android:drawable/stat_sys_upload" />
+            app:srcCompat="@drawable/ic_event_seat_black_24dp" />
 
         <ImageButton
             android:id="@+id/R3S3"
             android:layout_gravity="start|top"
             android:layout_margin="2dp"
             android:backgroundTint="#758B7D"
-            app:srcCompat="@android:drawable/stat_sys_upload" />
+            app:srcCompat="@drawable/ic_event_seat_black_24dp" />
 
         <ImageButton
             android:id="@+id/R3S4"
             android:layout_gravity="start|top"
             android:layout_margin="2dp"
             android:backgroundTint="#758B7D"
-            app:srcCompat="@android:drawable/stat_sys_upload" />
+            app:srcCompat="@drawable/ic_event_seat_black_24dp" />
 
         <ImageButton
             android:id="@+id/R3S5"
             android:layout_gravity="start|top"
             android:layout_margin="2dp"
             android:backgroundTint="#758B7D"
-            app:srcCompat="@android:drawable/stat_sys_upload" />
+            app:srcCompat="@drawable/ic_event_seat_black_24dp" />
 
         <ImageButton
             android:id="@+id/R3S6"
             android:layout_gravity="start|top"
             android:layout_margin="2dp"
             android:backgroundTint="#758B7D"
-            app:srcCompat="@android:drawable/stat_sys_upload" />
+            app:srcCompat="@drawable/ic_event_seat_black_24dp" />
 
         <ImageButton
             android:id="@+id/R3S7"
             android:layout_gravity="start|top"
             android:layout_margin="2dp"
             android:backgroundTint="#758B7D"
-            app:srcCompat="@android:drawable/stat_sys_upload" />
+            app:srcCompat="@drawable/ic_event_seat_black_24dp" />
 
         <ImageButton
             android:id="@+id/R3S8"
             android:layout_gravity="start|top"
             android:layout_margin="2dp"
             android:backgroundTint="#758B7D"
-            app:srcCompat="@android:drawable/stat_sys_upload" />
+            app:srcCompat="@drawable/ic_event_seat_black_24dp" />
 
         <ImageButton
             android:id="@+id/R4S1"
             android:layout_gravity="start|top"
             android:layout_margin="2dp"
             android:backgroundTint="#758B7D"
-            app:srcCompat="@android:drawable/stat_sys_upload" />
+            app:srcCompat="@drawable/ic_event_seat_black_24dp" />
 
         <ImageButton
             android:id="@+id/R4S2"
             android:layout_gravity="start|top"
             android:layout_margin="2dp"
             android:backgroundTint="#758B7D"
-            app:srcCompat="@android:drawable/stat_sys_upload" />
+            app:srcCompat="@drawable/ic_event_seat_black_24dp" />
 
         <ImageButton
             android:id="@+id/R4S3"
             android:layout_gravity="start|top"
             android:layout_margin="2dp"
             android:backgroundTint="#758B7D"
-            app:srcCompat="@android:drawable/stat_sys_upload" />
+            app:srcCompat="@drawable/ic_event_seat_black_24dp" />
 
         <ImageButton
             android:id="@+id/R4S4"
             android:layout_gravity="start|top"
             android:layout_margin="2dp"
             android:backgroundTint="#758B7D"
-            app:srcCompat="@android:drawable/stat_sys_upload" />
+            app:srcCompat="@drawable/ic_event_seat_black_24dp" />
 
         <ImageButton
             android:id="@+id/R4S5"
             android:layout_gravity="start|top"
             android:layout_margin="2dp"
             android:backgroundTint="#758B7D"
-            app:srcCompat="@android:drawable/stat_sys_upload" />
+            app:srcCompat="@drawable/ic_event_seat_black_24dp" />
 
         <ImageButton
             android:id="@+id/R4S6"
             android:layout_gravity="start|top"
             android:layout_margin="2dp"
             android:backgroundTint="#758B7D"
-            app:srcCompat="@android:drawable/stat_sys_upload" />
+            app:srcCompat="@drawable/ic_event_seat_black_24dp" />
 
         <ImageButton
             android:id="@+id/R4S7"
             android:layout_gravity="start|top"
             android:layout_margin="2dp"
             android:backgroundTint="#758B7D"
-            app:srcCompat="@android:drawable/stat_sys_upload" />
+            app:srcCompat="@drawable/ic_event_seat_black_24dp" />
 
         <ImageButton
             android:id="@+id/R4S8"
             android:layout_gravity="start|top"
             android:layout_margin="2dp"
             android:backgroundTint="#758B7D"
-            app:srcCompat="@android:drawable/stat_sys_upload" />
+            app:srcCompat="@drawable/ic_event_seat_black_24dp" />
 
     </GridLayout>
 

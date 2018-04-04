@@ -77,7 +77,7 @@ public class ChairActivity extends AppCompatActivity {
                     if (!seat.getReserved()) {
                         seatObject.setColorFilter(Color.parseColor("#12D559"));
                     } else {
-                        seatObject.setColorFilter(Color.parseColor("#FFFFFF"));
+                        seatObject.setColorFilter(Color.parseColor("#000000"));
                     }
                     seat.toggleReservation();
                 }
