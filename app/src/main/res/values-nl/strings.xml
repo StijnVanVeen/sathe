@@ -20,4 +20,9 @@
     <string name="phone">Telefoon</string>
     <string name="payment_description">Welke betaalmethode wilt u gebruiken?</string>
     <string name="confirm">Bevestig</string>
+    <string name="payment_fail_button">Terug</string>
+    <string name="payment_fail_text">De betaling is niet gelukt</string>
+    <string name="openingHours">Openingstijden</string>
+    <string name="hours">elke dag van 11:00 tot 02:00</string>
+    <string name="payment_confirm_text">Betaling succesvol. Klik op de 3 puntjes in de rechterbovenhoek en ga naar \'Mijn Tickets\' om uw tickets te zien of klik op de \'OK\'knop om naar het filmoverzicht terug te gaan.</string>
 </resources>

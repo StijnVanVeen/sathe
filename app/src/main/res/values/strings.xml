@@ -45,8 +45,11 @@
     <string name="confirm">confirm</string>
     <string name="payment_chosen" translatable="false">Paying with iDeal requires you to input your bank account owner\'s name and number.</string>
 
-    <string name="payment_confirm_button">OK</string>
+    <string name="payment_confirm_button" translatable="false">OK</string>
     <string name="payment_confirm_text">Payment successful. Tap the 3 dots in the top right corner and go to \'My tickets\' to see your tickets or tap the \'OK\' button to go back to movies.</string>
     <string name="payment_fail_button">Back</string>
     <string name="payment_fail_text">Payment failed.</string>
+
+    <string name="openingHours">Opening hours</string>
+    <string name="hours">"Every day from 11:00 to 02:00 "</string>
 </resources>
