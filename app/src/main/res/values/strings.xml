@@ -33,7 +33,7 @@
     <string name="time">Time: </string>
     <string name="chairAmount">Amount of chairs: </string>
     <string name="proceed">Proceed</string>
-    <string name="a_chair_description">Choose a seat</string>
+    <string name="a_chair_description">Choose a seat by tapping the buttons above, the bar above the seats is a representation of the movie screen.</string>
     <string name="reviews">Reviews: </string>
     <string name="author">Author:</string>
 
@@ -46,7 +46,7 @@
     <string name="payment_chosen" translatable="false">Paying with iDeal requires you to input your bank account owner\'s name and number.</string>
 
     <string name="payment_confirm_button">OK</string>
-    <string name="payment_confirm_text">Payment successful.</string>
+    <string name="payment_confirm_text">Payment successful. Tap the 3 dots in the top right corner and go to \'My tickets\' to see your tickets or tap the \'OK\' button to go back to movies.</string>
     <string name="payment_fail_button">Back</string>
     <string name="payment_fail_text">Payment failed.</string>
 </resources>

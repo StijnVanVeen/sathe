@@ -47,8 +47,9 @@
         android:columnCount="8"
         android:orientation="horizontal"
         android:rowCount="2"
-        app:layout_constraintBottom_toTopOf="@+id/tv_chair_selection_description"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
@@ -281,8 +282,8 @@
 
     <TextView
         android:id="@+id/tv_chair_selection_description"
-        android:layout_width="268dp"
-        android:layout_height="66dp"
+        android:layout_width="342dp"
+        android:layout_height="116dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
@@ -290,9 +291,9 @@
         android:text="@string/a_chair_description"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.126"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.971" />
+        app:layout_constraintTop_toBottomOf="@+id/gl_chairs"
+        app:layout_constraintVertical_bias="0.295" />
 
 </android.support.constraint.ConstraintLayout>
